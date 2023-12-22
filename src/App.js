@@ -1,12 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
-  return (
-    <div className="App">
-      
-    </div>
+import { AppProvider } from './context/AppContext';
+
+const App = () => {
+  return(
+    <AppProvider>
+      <div className='container'>
+        <h1 className='mt-3'>Cave Adventures</h1>
+
+      </div>
+    </AppProvider>
   );
-}
+};
 
 export default App;
