@@ -1,5 +1,6 @@
 import {image,content,decision} from "../app.js";
 import * as player from "../utils/player.js";
+import {} from "../pages/store.js";
 import { scene1 } from "./scenes/scene-1.js";
 
 export function registration() {
@@ -31,74 +32,80 @@ export function registration() {
 
 export function playerReg() {
    let playerName = document.getElementById('name').value;
+   let playerRace;
+   let playerHealth;
+   let playerMagic;
+   let playerStrength;
+   let playerMoney;
+   let playerClass;
 
     // Check for Race and assign to playerRace
     if (document.getElementById('fairy').checked) {
-        player.Race = document.getElementById('fairy').value;
+        playerRace = document.getElementById('fairy').value;
         image.innerHTML = '<img class="imageSquare" src="/images/fairy.png" alt="fairy">';
     } else if (document.getElementById('elf').checked) {
-        player.Race = document.getElementById('elf').value;
+        playerRace = document.getElementById('elf').value;
         image.innerHTML = '<img class="imageSquare" src="/images/elf.png" alt="elf">';
     } else {
-        player.Race = document.getElementById('gnome').value;
+        playerRace = document.getElementById('gnome').value;
         image.innerHTML = '<img class="imageSquare" src="/images/gnome.png" alt="gnome">';
     }
 
     // Check for Class and assign to playerClass
     if (document.getElementById('warrior').checked) {
-        player.Class = document.getElementById('warrior').value;
+        playerClass = document.getElementById('warrior').value;
     } else if (document.getElementById('mage').checked) {
-        player.Class = document.getElementById('mage').value;
+        playerClass = document.getElementById('mage').value;
     } else {
-        player.Class = document.getElementById('cleric').value;
+        playerClass = document.getElementById('cleric').value;
     }
 
     // base player attributes for strengths, health, and magic
-    player.Strength = 5;
-    player.Health = 5;
-    player.Magic = 5;
-    player.Money = 15;
+    playerStrength = 5;
+    playerHealth = 5;
+    playerMagic = 5;
+    playerMoney = 15;
 
 
     // fairy attributes
-    if (player.Race === "Fairy") {
-        player.Health += 5;
-        player.Magic += 10;
+    if (playerRace === "Fairy") {
+        playerHealth += 5;
+        playerMagic += 10;
     }
 
     //elf attributes
-    if (player.Race === "Elf") {
-        player.Strength += 5;
-        player.Health += 10;
+    if (playerRace === "Elf") {
+        playerStrength += 5;
+        playerHealth += 10;
     }
 
     //gnome attributes
-    if (player.Race === "Gnome") {
-        player.Strength += 10;
-        player.Magic += 5;
+    if (playerRace === "Gnome") {
+        playerStrength += 10;
+        playerMagic += 5;
     }
 
     //mage attributes
-    if (player.Class === "Mage") {
-        player.Health += 5;
-        player.Magic += 10;
+    if (playerClass === "Mage") {
+        playerHealth += 5;
+        playerMagic += 10;
     }
 
     // cleric attributes
-    if (player.Class === "Cleric") {
-        player.Strength += 5;
-        player.Health += 10;
+    if (playerClass === "Cleric") {
+        playerStrength += 5;
+        playerHealth += 10;
     }
 
     // warrior attributes
-    if (player.Class === "Warrior") {
-        player.Strength += 10;
-        player.Magic += 5;
+    if (playerClass === "Warrior") {
+        playerStrength += 10;
+        playerMagic += 5;
     }
 
     image.innerHTML = '<img class="imageSquare" src="/images/please-register.jpg" alt="cave">';
 
-    content.innerHTML = "Name: " + player.Name + "<br>Race: " + player.Race + "<Br>Class: " + player.Class +"<br>Strength Level: " + player.Strength + "<br>Magic Level: " + player.Magic + "<br>Health Level: " + player.Health;
+    content.innerHTML = "Name: " + playerName + "<br>Race: " + playerRace + "<Br>Class: " + playerClass +"<br>Strength Level: " + playerStrength + "<br>Magic Level: " + playerMagic + "<br>Health Level: " + playerHealth;
     content.innerHTML +=
         `
             <p> You are all registered. Before you go, look at what equipment we have. You may want something to help with your adventure.</p>
