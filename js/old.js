@@ -1,145 +1,4 @@
-// var content;
-// var image;
-// var playerName;
-// var playerRace;
-// var playerClass;
-// var playerStrength;
-// var playerHealth;
-// var playerMagic;
-// var playerMoney;
-//
-//
-// window.onload = function()
-// {
-//     image = document.getElementById('imageForGame');
-//     image.innerHTML = "<img src='./images/cave.jpg' />";
-//
-//     content = document.getElementById('content');
-//     content.innerHTML = "<h2> Welcome to the Cave!</h2> <p> Are you ready to try your hand in this adventure?</p>";
-//     content.innerHTML += "<button id='btnReady'>Ready!</button>";
-//
-//     document.getElementById('btnReady').addEventListener('click', registration) ;
-// }
-//
-// function registration(e)
-// {
-//     image.innerHTML = "<img src='./images/please-register.jpg' />";
-//
-//     content.innerHTML =
-//         `<h1>Hello!</h1>
-//         <p>Before you are able to enter the cave, you must do a quick registration process.</p>
-//         <p>Fill in the information below</p>
-//
-//         <label for='name'>Name: </label>
-//             <input type='text'id='name' /> <br>
-//         <label for='race'>Race: </label>
-//             <input type='radio' name='race' id='fairy' value="Fairy">Fairy</input>
-//             <input type='radio' name='race' id='elf' value="Elf">Elf</input>
-//             <input type='radio' name='race' id='gnome' value="Gnome">Gnome</input> <br>
-//         <label for='class'>Class: </label>
-//             <input type='radio' name='class' id='warrior' value="Warrior">Warrior</input>
-//             <input type='radio' name='class' id='mage' value="Mage">Mage</input>
-//             <input type='radio' name='class' id='cleric' value="Cleric">Cleric</input> <br>
-//         <button id="btnRegister">Register</button>`
-//     ;
-//
-//     playerName = document.getElementById("btnRegister").addEventListener('click', playerReg );
-//
-// }
-//
-// function playerReg(e)
-// {
-//
-//
-//
-//     playerName = document.getElementById('name').value;
-//
-//     if (document.getElementById('fairy').checked) {
-//         playerRace = document.getElementById('fairy').value;
-//         image.innerHTML = "<img src='./images/fairy.png' />";
-//     } else if (document.getElementById('elf').checked) {
-//         playerRace = document.getElementById('elf').value;
-//         image.innerHTML = "<img src='./images/elf.png' />";
-//     } else {
-//         playerRace = document.getElementById('gnome').value;
-//         image.innerHTML = "<img src='./images/gnome.png' />";
-//     }
-//
-//     if (document.getElementById('warrior').checked) {
-//         playerClass = document.getElementById('warrior').value;
-//     } else if (document.getElementById('mage').checked) {
-//         playerClass = document.getElementById('mage').value;
-//     } else {
-//         playerClass = document.getElementById('cleric').value;
-//     }
-//
-//     // base player attributes for strengths, health, and magic
-//     playerStrength = 5;
-//     playerHealth = 5;
-//     playerMagic = 5;
-//     playerMoney = 15;
-//
-//
-//     // fairy attributes
-//     if (playerRace =="Fairy")
-//     {
-//         playerStrength = playerStrength;
-//         playerHealth += 5;
-//         playerMagic += 10;
-//     }
-//
-//     //elf attributes
-//     if (playerRace =="Elf")
-//     {
-//         playerStrength += 5;
-//         playerHealth += 10;
-//         playerMagic = playerMagic;
-//     }
-//
-//     //gnome attributes
-//     if (playerRace =="Gnome")
-//     {
-//         playerStrength += 10;
-//         playerHealth = playerHealth;
-//         playerMagic += 5;
-//     }
-//
-//     //mage attributes
-//     if (playerClass =="Mage")
-//     {
-//         playerStrength = playerStrength;
-//         playerHealth += 5;
-//         playerMagic += 10;
-//     }
-//
-//     // cleric attributes
-//     if (playerClass =="Cleric")
-//     {
-//         playerStrength += 5;
-//         playerHealth += 10;
-//         playerMagic = playerMagic;
-//     }
-//
-//     // warrior attributes
-//     if (playerClass =="Warrior")
-//     {
-//         playerStrength += 10;
-//         playerHealth = playerHealth;
-//         playerMagic += 5;
-//     }
-//
-//     content.innerHTML = "Name: " + playerName + "<br>Race: " + playerRace + "<Br>Class: " + playerClass +"<br>Strength Level: " + playerStrength + "<br>Magic Level: " + playerMagic + "<br>Health Level: " + playerHealth;
-//     content.innerHTML +=
-//         `
-//             <p> You are all registered. Before you go, look at what equipment we have. You may want something to help with your adventure.</p>
-//             <button id="btnStore">Review Equipment</button>
-//             <button id="btnStartCave">Head to the Cave</button>
-//         `
-//
-//     document.getElementById("btnStore").addEventListener('click', storeEquip );
-//     document.getElementById('btnStartCave').addEventListener('click', finalReg );
-//
-// }
+
 //
 // function storeEquip(e)
 // {
@@ -220,7 +79,7 @@
 //
 //     } else
 //     {
-//         alert("You don't have enought money for all that. Try again.");
+//         alert("You don't have enough money for all that. Try again.");
 //
 //     }
 // }
@@ -243,14 +102,12 @@
 //
 // }
 //
-// function finalReg(e)
-// {
-//     // image.innerHTML = "<img src='./images/swordshield.png' />";
-//     image.innerHTML = "";
-//
-//     content.innerHTML = `<p>Good luck on your adventure!</p><button id="scene1">Enter Cave</button>`
-//     document.getElementById("scene1").addEventListener('click', scene1);
-// }
+
+
+
+
+
+
 //
 // function scene1(e)
 // {
