@@ -1,4 +1,5 @@
 import {image,content,decision} from "../app.js";
+import {playerMoney} from "./registration.js";
 
 export function storeEquip(){
     image.innerHTML = '<img class="imageSquare" src="/images/swordshield.png" alt="sword and shield">';
@@ -7,7 +8,7 @@ export function storeEquip(){
         `
     <h1> Equipment Rentals </h1>
     <p> Check out the various equipment you can rent. Prices and equipment detail are provided. Select which items you would like and let me know when you are done.<p>
-    <p><strong> Your Wallet: `+playerMoney+` coins </strong>
+    <p><strong> Your Wallet: ` + playerMoney + ` coins </strong>
     <table>
         <tr>
             <th>Item</th>

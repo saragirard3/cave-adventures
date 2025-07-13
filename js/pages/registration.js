@@ -3,6 +3,14 @@ import * as player from "../utils/player.js";
 import {} from "../pages/store.js";
 import { scene1 } from "./scenes/scene-1.js";
 
+let playerName;
+export let playerRace;
+export let playerHealth;
+export let playerMagic;
+export let playerStrength;
+export let playerMoney;
+export let playerClass;
+
 export function registration() {
     image.innerHTML = '<img class="imageSquare" src="/images/please-register.jpg" alt="cave">';
 
@@ -31,13 +39,7 @@ export function registration() {
 }
 
 export function playerReg() {
-   let playerName = document.getElementById('name').value;
-   let playerRace;
-   let playerHealth;
-   let playerMagic;
-   let playerStrength;
-   let playerMoney;
-   let playerClass;
+   playerName = document.getElementById('name').value;
 
     // Check for Race and assign to playerRace
     if (document.getElementById('fairy').checked) {
