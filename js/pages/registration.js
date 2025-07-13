@@ -1,15 +1,6 @@
 import {image,content,decision} from "../app.js";
-import * as player from "../utils/player.js";
-import {} from "../pages/store.js";
+import {storeEquip} from "./store.js";
 import { scene1 } from "./scenes/scene-1.js";
-
-let playerName;
-export let playerRace;
-export let playerHealth;
-export let playerMagic;
-export let playerStrength;
-export let playerMoney;
-export let playerClass;
 
 export function registration() {
     image.innerHTML = '<img class="imageSquare" src="/images/please-register.jpg" alt="cave">';
@@ -38,76 +29,84 @@ export function registration() {
     document.getElementById("btnRegister").addEventListener('click', playerReg );
 }
 
+export var Name;
+export var Race;
+export var Health;
+export var Magic;
+export var Strength;
+export var Money;
+export var Class;
+
 export function playerReg() {
-   playerName = document.getElementById('name').value;
+    Name = document.getElementById('name').value;
 
     // Check for Race and assign to playerRace
     if (document.getElementById('fairy').checked) {
-        playerRace = document.getElementById('fairy').value;
+        Race = document.getElementById('fairy').value;
         image.innerHTML = '<img class="imageSquare" src="/images/fairy.png" alt="fairy">';
     } else if (document.getElementById('elf').checked) {
-        playerRace = document.getElementById('elf').value;
+        Race = document.getElementById('elf').value;
         image.innerHTML = '<img class="imageSquare" src="/images/elf.png" alt="elf">';
     } else {
-        playerRace = document.getElementById('gnome').value;
+        Race = document.getElementById('gnome').value;
         image.innerHTML = '<img class="imageSquare" src="/images/gnome.png" alt="gnome">';
     }
 
     // Check for Class and assign to playerClass
     if (document.getElementById('warrior').checked) {
-        playerClass = document.getElementById('warrior').value;
+        Class = document.getElementById('warrior').value;
     } else if (document.getElementById('mage').checked) {
-        playerClass = document.getElementById('mage').value;
+        Class = document.getElementById('mage').value;
     } else {
-        playerClass = document.getElementById('cleric').value;
+        Class = document.getElementById('cleric').value;
     }
 
     // base player attributes for strengths, health, and magic
-    playerStrength = 5;
-    playerHealth = 5;
-    playerMagic = 5;
-    playerMoney = 15;
+    Strength = 5;
+    Health = 5;
+    Magic = 5;
+    Money = 15;
 
 
     // fairy attributes
-    if (playerRace === "Fairy") {
-        playerHealth += 5;
-        playerMagic += 10;
+    if (Race === "Fairy") {
+        Health += 5;
+        Magic += 10;
     }
 
     //elf attributes
-    if (playerRace === "Elf") {
-        playerStrength += 5;
-        playerHealth += 10;
+    if (Race === "Elf") {
+        Strength += 5;
+        Health += 10;
     }
 
     //gnome attributes
-    if (playerRace === "Gnome") {
-        playerStrength += 10;
-        playerMagic += 5;
+    if (Race === "Gnome") {
+        Strength += 10;
+        Magic += 5;
     }
 
     //mage attributes
-    if (playerClass === "Mage") {
-        playerHealth += 5;
-        playerMagic += 10;
+    if (Class === "Mage") {
+        Health += 5;
+        Magic += 10;
     }
 
     // cleric attributes
-    if (playerClass === "Cleric") {
-        playerStrength += 5;
-        playerHealth += 10;
+    if (Class === "Cleric") {
+        Strength += 5;
+        Health += 10;
     }
 
     // warrior attributes
-    if (playerClass === "Warrior") {
-        playerStrength += 10;
-        playerMagic += 5;
+    if (Class === "Warrior") {
+        Strength += 10;
+        Magic += 5;
     }
 
     image.innerHTML = '<img class="imageSquare" src="/images/please-register.jpg" alt="cave">';
 
-    content.innerHTML = "Name: " + playerName + "<br>Race: " + playerRace + "<Br>Class: " + playerClass +"<br>Strength Level: " + playerStrength + "<br>Magic Level: " + playerMagic + "<br>Health Level: " + playerHealth;
+    content.innerHTML = "Name: " + Name + "<br>Race: " + Race + "<Br>Class: " + Class +"<br>Strength Level: " + Strength + "<br>Magic Level: " + Magic + "<br>Health Level: " + Health;
     content.innerHTML +=
         `
             <p> You are all registered. Before you go, look at what equipment we have. You may want something to help with your adventure.</p>
@@ -121,9 +120,8 @@ export function playerReg() {
             <button id="btnStartCave">Head to the Cave</button>
         </div>`
 
-    // document.getElementById("btnStore").addEventListener('click', storeEquip );
+    document.getElementById("btnStore").addEventListener('click', storeEquip );
     document.getElementById('btnStartCave').addEventListener('click', finalReg );
-
 
 }
 
